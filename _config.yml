@@ -15,7 +15,7 @@ sass:
 
 permalink: /posts/:title/
 texture:
-  title: Heeil Ahn
+  title: DogFoot dev
   tagline: Developer
   date_format: "%b %-d, %Y"
   style: black
@@ -25,9 +25,9 @@ texture:
   # generate social links in footer
   social_links:
     # twitter: thelehhman
-    github:  heeilandill
-    linkedIn: in/thelehhman
-    rss: rss
+    github:  dogfootdev
+    # linkedIn: in/thelehhman
+    # rss: rss
  
 
 # If you want to link only specific pages in your header, uncomment
