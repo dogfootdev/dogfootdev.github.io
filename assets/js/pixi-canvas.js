@@ -31,7 +31,8 @@ function init() {
 	
 	target.appendChild(renderer.view);			
     
-    var loader = new PIXI.AssetLoader(["assets/image/dog-paw.png"]);
+
+    var loader = new PIXI.AssetLoader(["/assets/image/dog-paw.png"]);
     loader.onComplete = onLoadAssets;
     loader.load();
     window.addEventListener("resize", resize, false);
@@ -101,7 +102,7 @@ function addCircle(pos, size) {
 
     var body = world.CreateBody(bodyDef);
     body.CreateFixture(fd);
-    var ball = new PIXI.Sprite(PIXI.Texture.fromFrame("assets/image/dog-paw.png"));
+    var ball = new PIXI.Sprite(PIXI.Texture.fromFrame("/assets/image/dog-paw.png"));
     ball.alpha = 0.05 + 0.5*Math.random();
     stage.addChild(ball);
     ball.anchor.x = ball.anchor.y = 0.5;
