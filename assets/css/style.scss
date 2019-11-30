@@ -52,6 +52,18 @@
 }
 {%- endif -%}
 // Textures
+
+#header{
+    position: relative;
+}
+
+#pixi-canvas {
+    z-index: -100;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
 .texture-black {
     background-image: url('{{ site.baseurl }}/assets/textures/black.jpg');
 

@@ -15,8 +15,8 @@ sass:
 
 permalink: /posts/:title/
 texture:
-  title: DOGFOOT dev 🐾
-  tagline: Developer
+  title: DOGFOOT DEV 
+  tagline: Developer  
   date_format: "%b %-d, %Y"
   style: black
   showNav: false
