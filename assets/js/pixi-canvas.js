@@ -145,7 +145,7 @@ function update() {
 }
 
 function resize() {
-    renderer.view.style.width = window.innerWidth-20+"px";
-    renderer.view.style.height = (window.innerWidth-20)*0.5+ "px";
+    // renderer.view.style.width = window.innerWidth-20+"px";
+    // renderer.view.style.height = (window.innerWidth-20)*0.5+ "px";
     dd.x = STAGE_WIDTH/window.innerWidth;
 }
