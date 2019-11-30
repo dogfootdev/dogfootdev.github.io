@@ -39,8 +39,6 @@ function init() {
 }
 
 function onLoadAssets() {
-    // var tiling = new PIXI.TilingSprite(PIXI.Texture.fromImage("assets/img/black.jpg"), STAGE_WIDTH, STAGE_HEIGHT);
-    // stage.addChild(tiling);
     var gravity = new Box2D.Common.Math.b2Vec2(0, 5);
     world = new Box2D.Dynamics.b2World(gravity,  true);
     
