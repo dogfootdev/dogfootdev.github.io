@@ -28,6 +28,7 @@ texture:
     # rss: rss
  
 
+g-analytics: UA-37374211-12
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
 #header_pages:
