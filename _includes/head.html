@@ -7,5 +7,13 @@
 <script src="{{ "/assets/js/pixi.min.js" | relative_url }}"></script>
 <script src="{{ "/assets/js/MathTools.js" | relative_url }}"></script>
 <script src="{{ "/assets/js/pixi-canvas.js" | relative_url }}"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-37374211-12"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-37374211-12');
+</script>
+
 <title>{{ page.title | default: site.title }}</title>
 {% seo %}
