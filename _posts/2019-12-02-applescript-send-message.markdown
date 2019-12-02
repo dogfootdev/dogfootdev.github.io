@@ -24,16 +24,12 @@ end tell
 targetBuddy에 메시지 전송할 대상 번호를 적용하고
 
 ```applescript
-set targetBuddy to "+8210********"
-
 set targetBuddy to "+821011112222"
 ```
 
 textMessage에 메세지 내용을 적고
 
 ```applescript
-set textMessage to "message content"
-
 set textMessage to "맥에서 메시지를 보내보자"
 ```
 
