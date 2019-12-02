@@ -93,7 +93,7 @@ function addCircle(pos, size) {
     var body = world.CreateBody(bodyDef);
     body.CreateFixture(fd);
     var ball = new PIXI.Sprite(PIXI.Texture.fromFrame("/assets/image/dog-paw.png"));
-    ball.alpha = 0.05 + 0.4*Math.random();
+    ball.alpha = 0.05 + 0.2*Math.random();
     stage.addChild(ball);
     ball.anchor.x = ball.anchor.y = 0.5;
     ball.scale.x = ball.scale.y = size.w / 128;
