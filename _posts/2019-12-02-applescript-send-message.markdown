@@ -5,8 +5,8 @@ description: AppleScript로 맥에서 아이폰으로 SMS, MMS를 전송해보�
 date:   2019-12-02 17:50:00
 categories: applescrip shellscript
 ---
-###AppleScript로 메시지 보내기
 
+###AppleScript로 메시지 보내기
 -------------------------
 
 맥에서 지원하는 [AppleScript]([https://ko.wikipedia.org/wiki/%EC%95%A0%ED%94%8C%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8](https://ko.wikipedia.org/wiki/애플스크립트))로 아이폰과 연동된 맥에서 SMS 또는 MMS 메시지를 보낼 수 있다.
