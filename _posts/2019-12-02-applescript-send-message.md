@@ -7,9 +7,8 @@ categories: applescrip shellscript macOS-10.15.1 iOS-13.2.3
 comments: true
 ---
 
-맥에서 지원하는 [AppleScript]([https://ko.wikipedia.org/wiki/%EC%95%A0%ED%94%8C%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8](https://ko.wikipedia.org/wiki/애플스크립트))로 아이폰과 연동된 맥에서 SMS 또는 MMS 메시지를 전송할 수 있는데, 이번 포스팅에서는 맥에서 `applescript`와 `termianl`을 활용하여 아이폰으로 메시지 전송테스트를 해보도록 하겠다.
-
-
+맥에서 지원하는 [AppleScript]([https://ko.wikipedia.org/wiki/%EC%95%A0%ED%94%8C%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8](https://ko.wikipedia.org/wiki/애플스크립트))로 아이폰과 연동된 맥에서 SMS, MMS 메시지를 전송할 수 있는 기능을 제공한다.  
+이번 포스팅에서는 맥에서 `applescript`와 `termianl`로 메시지 전송테스트를 진행하고자 한다.  
 
 아래는 `applescript`로 메시지 전송할 수 있는 코드로
 
@@ -23,14 +22,14 @@ tell application "Messages"
 end tell
 ```
 
-targetBuddy에 아래와 같이 국제번호 형식에 맞춰 전화번호를 적어 준다.
+targetBuddy에 아래와 같이 국제번호 형식에 맞춰 전화번호를 적어 준다.  
 
-targetBuddy를 찾을 수 없다면 맥에서 연락처 전화번호를 보면 아래 형식을 참고해 보자.
+> applescript 실행 시 targetBuddy를 찾을 수 없다면 맥의 연락처를 참고해 보자.
 ```applescript
 set targetBuddy to "+821011112222"
 ```
 
-textMessage에 메세지 내용을 적고
+textMessage에 전송할 메세지 내용을 적고
 ```applescript
 set textMessage to "맥에서 메시지를 보내보자"
 ```
@@ -42,7 +41,7 @@ set textMessage to "맥에서 메시지를 보내보자"
 ![image-20191202173720463](http://dogfootdev.github.io/assets/image/posts/2019-12-02-applescript-send-message/image-20191202173720463.png)
 
 
-Terminal에서 메시지 전송하는 방법은 아래와 같다.
+Terminal에서 메시지 전송하는 방법은 아래와 같다.  
 command로 쓰기 위해서 `\"` 이스케이프 처리가 필요
 
 ```applescript
