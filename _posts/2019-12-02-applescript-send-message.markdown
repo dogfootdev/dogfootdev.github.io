@@ -38,12 +38,13 @@ set textMessage to "맥에서 메시지를 보내보자"
 ```
 
 위 메시지 코드를 `sendmessage.applescript`로 저장하고 더블 클릭하면 아래와 같이 스크립트 편집기가 실행이 되며 실행 버튼을 누르면 메시지 전송이 된다.
+({{"/assets/img/image.png"| relative_url}}
 
-![image-20191202173204361](asset/image/posts/2019-12-02-applescript-send-message/image-20191202173204361.png)
+![image-20191202173204361]({{"/asset/image/posts/2019-12-02-applescript-send-message/image-20191202173204361.png"|relative_url}})
 
 아래와 같이 문자가 전송된 것을 확인할 수 있다.
 
-![image-20191202173720463](asset/image/posts/2019-12-02-applescript-send-message/image-20191202173720463.png)
+![image-20191202173720463]({{"/asset/image/posts/2019-12-02-applescript-send-message/image-20191202173720463.png"|relative_url}})
 
 
 Terminal에서 메시지 전송하는 방법은 아래와 같다.
