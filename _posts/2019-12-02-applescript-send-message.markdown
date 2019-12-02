@@ -21,7 +21,8 @@ tell application "Messages"
 end tell
 ```
 
-targetBuddy에 메시지를 전송할 대상 번호를 적용하고
+targetBuddy에 아래와 같이 국제번호 형식에 맞춰 전화번호를 적어 준다.
+참고로 맥에서 연락처 전화번호를 보면 아래와 같이 되어 있음
 ```applescript
 set targetBuddy to "+821011112222"
 ```
@@ -39,6 +40,7 @@ set textMessage to "맥에서 메시지를 보내보자"
 
 
 Terminal에서 메시지 전송하는 방법은 아래와 같다.
+command로 쓰기 위해서 `\"` 이스케이프 처리가 필요
 
 ```applescript
 osascript -e "tell application \"Messages\"
@@ -50,7 +52,7 @@ osascript -e "tell application \"Messages\"
 end tell"
 ```
 
-Terminal로 메시지 전송하는것을 응용하면 다양한 활용이 가능한데, 다음은 포스팅은 아이폰에서 받은 메시지를 다른 사람에게 포워딩하는 테스트를 해보도록 하겠다.
+다음 포스팅은 Terminal로 메시지 전송하는 것을 응용하여 아이폰에서 받은 메시지를 다른 사람에게 포워딩을 해보도록 하겠다.
 
 
 
