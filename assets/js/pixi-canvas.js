@@ -1,4 +1,4 @@
-var debugDraw;
+
 var STAGE_WIDTH, STAGE_HEIGHT;
 var METER = 100;
 var SCALE = 4;
@@ -25,7 +25,7 @@ function init() {
     STAGE_WIDTH = 256*SCALE;
     STAGE_HEIGHT = 256*target.offsetHeight/target.offsetWidth*SCALE;
     dd.x = STAGE_WIDTH/window.innerWidth;
-    stage = new PIXI.Stage(0x383838, true);
+    stage = new PIXI.Stage(0x181818, true);
     renderer = PIXI.autoDetectRenderer(STAGE_WIDTH, STAGE_HEIGHT, null);
 	renderer.view.id = "pixi-canvas";
 	
@@ -65,15 +65,6 @@ function onLoadAssets() {
     world.CreateBody(bodyDef).CreateFixture(polyFixture);
     // add some object
     populate();
-    
-    debugDraw = new Box2D.Dynamics.b2DebugDraw();
-    debugDraw.SetSprite(renderer.view);
-    debugDraw.SetDrawScale(25.0);
-    debugDraw.SetFillAlpha(0.3);
-    
-    debugDraw.SetLineThickness(1.0);
-    debugDraw.SetFlags(true);
-    world.SetDebugDraw(debugDraw);
     raf(update);
 }
 function populate(n) {
@@ -93,7 +84,6 @@ function addCircle(pos, size) {
     bodyDef.position.Set(pos.x, pos.y);
     var fd = new Box2D.Dynamics.b2FixtureDef();
     fd.shape = new Box2D.Collision.Shapes.b2CircleShape();
-    console.log(radius)
     fd.shape.SetRadius(radius);
     fd.restitution = 0.3;
     fd.friction = 0.3;
@@ -103,7 +93,7 @@ function addCircle(pos, size) {
     var body = world.CreateBody(bodyDef);
     body.CreateFixture(fd);
     var ball = new PIXI.Sprite(PIXI.Texture.fromFrame("/assets/image/dog-paw.png"));
-    ball.alpha = 0.05 + 0.5*Math.random();
+    ball.alpha = 0.05 + 0.4*Math.random();
     stage.addChild(ball);
     ball.anchor.x = ball.anchor.y = 0.5;
     ball.scale.x = ball.scale.y = size.w / 128;
