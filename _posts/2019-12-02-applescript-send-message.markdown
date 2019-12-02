@@ -13,7 +13,7 @@ AppleScript로 메시지 보내기
 
 아래 메시지 전송을 코드에서
 
-``applescript
+```applescript
 tell application "Messages"
 	set targetBuddy to "+8210********"
 	set targetService to id of 1st service whose service type = iMessage
@@ -21,19 +21,19 @@ tell application "Messages"
 	set theBuddy to buddy targetBuddy of service id targetService
 	send textMessage to theBuddy
 end tell
-``
+```
 
 targetBuddy에 메시지 전송할 대상 번호를 적용하고
 
-``applescript
+```applescript
 set targetBuddy to \"+821011112222\"
-``
+```
 
 textMessage에 메세지 내용을 적고
 
-``applescript
+```applescript
 set textMessage to \"맥에서 메시지를 보내보자\"
-``
+```
 
 위 메시지 코드를 `sendmessage.applescript`로 저장하고 더블 클릭하면 아래와 같이 스크립트 편집기가 실행이 되며 실행 버튼을 누르면 메시지 전송이 된다.
 
@@ -45,7 +45,7 @@ set textMessage to \"맥에서 메시지를 보내보자\"
 
 Terminal에서 메시지 전송하는 방법은 아래와 같다.
 
-``applescript
+```applescript
 osascript -e "tell application \"Messages\"
 	set targetBuddy to \"+821011112222\"
 	set targetService to id of 1st service whose service type = iMessage
@@ -53,7 +53,7 @@ osascript -e "tell application \"Messages\"
 	set theBuddy to buddy targetBuddy of service id targetService
 	send textMessage to theBuddy
 end tell"
-``
+```
 
 Terminal을 응용한다면 다양한 활용이 가능하다.
 
