@@ -17,7 +17,7 @@
       </div>
 
         <!-- Configure Disqus -->
-      {%- if site.texture.disqus_shortname -%}
+      {%- if page.comments -%}
         <div id="disqus_thread" style="margin-top:25px"></div>
         <script>
           var disqus_config = function () {
@@ -26,7 +26,7 @@
           };
           (function() {
             var d = document, s = d.createElement('script');
-            s.src = 'https://{{ site.texture.disqus_shortname }}.disqus.com/embed.js';
+            s.src = 'https://dogfootdev-github-io.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
           })();
