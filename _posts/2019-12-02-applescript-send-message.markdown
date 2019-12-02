@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Send iPhone message at mac"
-description: AppleScript를 이용하서 맥에서 SMS, MMS를 전송해보자.
+description: AppleScript를 이용해서 맥에서 SMS, MMS를 전송해보자.
 date:   2019-12-02 17:50:00
 categories: applescrip shellscript macOS-10.15.1 iOS-13.2.3
 ---
