@@ -8,9 +8,9 @@ comments: true
 ---
 
 맥에서 지원하는 [AppleScript]([https://ko.wikipedia.org/wiki/%EC%95%A0%ED%94%8C%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8](https://ko.wikipedia.org/wiki/애플스크립트))로 아이폰과 연동된 맥에서 메시지(SMS, MMS)를 전송할 수 있는 기능을 제공한다.  
-이번 포스팅에서는 맥에서 `applescript`와 \로 메시지 전송테스트를 진행하고자 한다.  
+이번 포스팅에서는 맥에서 `applescript`로 어떻게 메시지 전송할 수 있는지 확인해보겠다.  
 
-아래는 `applescript`코드에서 전화번호와 메세지 내용을 넣고 맥에서 실행 시키면 메세지를 전송할 수 있다.
+아래 코드는 `applescript`로 메시지를 보낼 수 있는 예제 코드로 전화번호와 메시지 내용을 수정해 보자.
 
 ```applescript
 tell application "Messages"
@@ -23,8 +23,8 @@ end tell
 ```
 
 <br>
-targetBuddy에 아래와 같이 국제번호 형식에 맞춰 전화번호를 적어 준다.  
-applescript 실행 시 targetBuddy를 찾을 수 없다면 맥의 연락처를 참고해 보자.
+targetBuddy에 아래와 같이 전화번호를 국제번호 형식에 맞춰 적어 준다.  
+`applescript` 실행 시 targetBuddy를 찾을 수 없다는 에러가 난다면, 맥의 연락처에 등록되어 있는 전화번호를 참고해 보자.
 ```applescript
 set targetBuddy to "+821011112222"
 ```
@@ -35,7 +35,7 @@ textMessage에 전송할 메세지 내용을 적고
 set textMessage to "맥에서 메시지를 보내보자"
 ```
 
-메시지 코드를 `sendmessage.applescript`로 저장하고 더블 클릭하면 아래와 같이 스크립트 편집기가 실행이 되며 실행 버튼을 누르면 메시지 전송이 된다.
+위 코드를 `sendmessage.applescript`로 저장하고 더블 클릭하면 아래와 같이 스크립트 편집기가 실행이 되며 실행 버튼을 누르면 메시지 전송이 된다.
 ![image-20191202173204361](http://dogfootdev.github.io/assets/image/posts/2019-12-02-applescript-send-message/image-20191202173204361.png)
 
 <br>
@@ -45,7 +45,6 @@ set textMessage to "맥에서 메시지를 보내보자"
 <br>
 `send file`에 파일경로를 적용하면 파일 전송도 가능하다.
 그 외 어떤 파일을 전송할 수 있는지 확인해 보면 좋을 것 같다.
-
 ```applescript
 tell application "Messages"
 	set targetBuddy to "+821011112222"
