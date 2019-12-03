@@ -1,8 +1,8 @@
 ---
+title: 맥에서 아이폰으로 메세지 보내기
 layout: post
-title:  "Send iPhone message at mac"
 description: AppleScript를 이용해서 맥에서 SMS, MMS를 전송해보자.
-date:   2019-12-02 17:50:00
+date: '2019-12-02 17:50:00 +0000'
 categories: applescrip shellscript macOS-10.15.1 iOS-13.2.3
 comments: true
 ---
@@ -55,8 +55,3 @@ end tell"
 ```
 
 다음 포스팅은 Terminal로 메시지 전송하는 것을 응용하여 아이폰에서 받은 메시지를 다른 사람에게 포워딩을 해보도록 하겠다.
-
-
-
-
-
