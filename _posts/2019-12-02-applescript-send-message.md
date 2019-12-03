@@ -37,8 +37,21 @@ set textMessage to "맥에서 메시지를 보내보자"
 메시지 코드를 `sendmessage.applescript`로 저장하고 더블 클릭하면 아래와 같이 스크립트 편집기가 실행이 되며 실행 버튼을 누르면 메시지 전송이 된다.
 ![image-20191202173204361](http://dogfootdev.github.io/assets/image/posts/2019-12-02-applescript-send-message/image-20191202173204361.png)
 
-아래와 같이 문자가 전송된 것을 확인할 수 있다.
+아래와 같이 문자가 전송된 것을 확인할 수 있다.  
 ![image-20191202173720463](http://dogfootdev.github.io/assets/image/posts/2019-12-02-applescript-send-message/image-20191202173720463.png)
+
+
+메시지에 파일 path를 적용하면 파일 전송도 가능하다.
+그 외 어떤 파일을 전송할 수 있는지도 확인해 보면 좋을 것 같다.
+
+```applescript
+tell application "Messages"
+	set targetBuddy to "+821011112222"
+	set targetService to id of 1st service whose service type = iMessage
+	set theBuddy to buddy targetBuddy of service id targetService
+	send file "/Users/{username}/Desktop/image.png" to theBuddy
+end tell
+```
 
 
 Terminal에서 메시지 전송하는 방법은 아래와 같다.  
