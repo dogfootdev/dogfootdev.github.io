@@ -57,7 +57,7 @@ end tell
 
 <br>
 Terminal에서 메시지 전송하는 방법은 아래와 같다.  
-command로 쓰기 위해서 `\"` 이스케이프 처리가 필요
+osascript command로 실행하기 위해서는 `\"` 이스케이프 처리가 필요
 
 ```applescript
 osascript -e "tell application \"Messages\"
