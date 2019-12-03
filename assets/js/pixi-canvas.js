@@ -3,7 +3,7 @@ var STAGE_WIDTH, STAGE_HEIGHT;
 var METER = 100;
 var SCALE = 4;
 var STEP = 1/60;
-var MAX = 60;
+var MAX = 20;
 
 var bodies = [], actors = [];
 var stage, renderer;
@@ -72,7 +72,7 @@ function populate(n) {
     for (var i = 0; i < MAX; i++) {
         var pos = {x: MathTools.randomRange(0, STAGE_WIDTH) / METER, y:-MathTools.randomRange(50, 5000) / METER};
         var size;
-        size = { w:MathTools.randomRange(30, 60), h:MathTools.randomRange(30, 60) };
+        size = { w:MathTools.randomRange(30, 120), h:MathTools.randomRange(30, 120) };
         addCircle(pos, size);
     }
 }
