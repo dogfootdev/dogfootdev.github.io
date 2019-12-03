@@ -4,3 +4,5 @@ gem 'jekyll-admin', group: :jekyll_plugins
 
 source "https://rubygems.org"
 gemspec
+
+gem "jekyll", "~> 3.8"
