@@ -34,10 +34,10 @@ set textMessage to "맥에서 메시지를 보내보자"
 ```
 
 위 코드를 `sendmessage.applescript`로 저장하고 더블 클릭하면 아래와 같이 스크립트 편집기가 실행이 되며 실행 버튼을 누르면 메시지가 전송된다.
-![image-20191202173204361](http://dogfootdev.github.io/assets/image/posts/2019-12-02-applescript-send-message/image-20191202173204361.png)
+![image-20191202173204361]({{ site.baseurl }}/assets/image/posts/2019-12-02-applescript-send-message/image-20191202173204361.png)
 
 아래와 같이 문자가 전송된 것을 확인할 수 있다.  
-![image-20191202173720463](http://dogfootdev.github.io/assets/image/posts/2019-12-02-applescript-send-message/image-20191202173720463.png)
+![image-20191202173720463]({{ site.baseurl }}/assets/image/posts/2019-12-02-applescript-send-message/image-20191202173720463.png)
 
 `send file`에 파일경로를 적용하면 파일 전송도 가능하다.
 그 외 어떤 파일을 전송할 수 있는지 확인해 보면 좋을 것 같다.
@@ -63,5 +63,6 @@ osascript -e "tell application \"Messages\"
 end tell"
 ```
 
-Terminal로 메시지 전송하는 것을 응용하여 아이폰에서 받은 메시지를 다른 사람에게 포워딩하는 포스팅을 하겠습니다.
+터미널로 메시지 전송하는 것을 응용하여 아이폰에서 받은 메시지를 다른 사람에게 포워딩하는 포스팅을 하겠다.
+[맥용 메세지 앱에서 신용카드 데이터 가져오기]({% post_url 2019-12-02-applescript-send-message%})  
 <br><br>
