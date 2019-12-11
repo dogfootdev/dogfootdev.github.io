@@ -22,27 +22,23 @@ tell application "Messages"
 end tell
 ```
 
-<br>
 targetBuddy에 아래와 같이 전화번호를 국제번호 형식에 맞춰 적어 준다.  
 `applescript` 실행 시 targetBuddy를 찾을 수 없다는 에러가 난다면, 맥의 연락처에 등록되어 있는 전화번호를 참고해 보자.
 ```applescript
 set targetBuddy to "+821011112222"
 ```
 
-<br>
 textMessage에 전송할 메세지 내용을 적고
 ```applescript
 set textMessage to "맥에서 메시지를 보내보자"
 ```
 
-위 코드를 `sendmessage.applescript`로 저장하고 더블 클릭하면 아래와 같이 스크립트 편집기가 실행이 되며 실행 버튼을 누르면 메시지 전송이 된다.
+위 코드를 `sendmessage.applescript`로 저장하고 더블 클릭하면 아래와 같이 스크립트 편집기가 실행이 되며 실행 버튼을 누르면 메시지가 전송된다.
 ![image-20191202173204361](http://dogfootdev.github.io/assets/image/posts/2019-12-02-applescript-send-message/image-20191202173204361.png)
 
-<br>
 아래와 같이 문자가 전송된 것을 확인할 수 있다.  
 ![image-20191202173720463](http://dogfootdev.github.io/assets/image/posts/2019-12-02-applescript-send-message/image-20191202173720463.png)
 
-<br>
 `send file`에 파일경로를 적용하면 파일 전송도 가능하다.
 그 외 어떤 파일을 전송할 수 있는지 확인해 보면 좋을 것 같다.
 ```applescript
@@ -54,7 +50,6 @@ tell application "Messages"
 end tell
 ```
 
-<br>
 Terminal에서 메시지 전송하는 방법은 아래와 같다.  
 osascript command로 실행하기 위해서는 `\"` 이스케이프 처리가 필요하다.
 
