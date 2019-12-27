@@ -8,11 +8,11 @@ comments: true
 
 ---
 
-이번 포스팅은 신용카드 사용내역 중 새 메시지만 추출하여 지정한 대상에게 메시지를 전달하는 포워딩 커멘드를 구현하는 포스팅하겠다.
+이번 포스팅은 신용카드 사용내역 중 새 메시지만 추출하여 지정한 대상에게 메시지를 전달하는 포워딩 커멘드를 구현하는 포스팅 하겠다.
 
 **사전 지식**  
 
-- [맥에서 커멘드라인으로 아이폰 메세지 보내기]({% post_url 2019-12-02-applescript-send-message%})
+- [맥에서 커멘드 라인으로 아이폰 메시지 보내기]({% post_url 2019-12-02-applescript-send-message%})
 
 - [맥용 메시지 앱에서 신용카드 사용내역 추출하기]({% post_url 2019-12-11-message-chat-db-select%})
 
@@ -22,7 +22,7 @@ comments: true
 
 ##특수문자 REPLACE 처리
 
-새 메시지 추출하기 앞서 카드사 메시지에는 보통 개행과 `*` 애스터리스크 문자가 포함되 있어 text에 아래와 같이 REPLACE 처리가 필요하다.
+새 메시지 추출하기 앞서 카드사 메시지에는 보통 개행과 `*` 애스터리스크 문자가 포함돼 있어 text에 아래와 같이 REPLACE 처리가 필요하다.
 
 ```shell
 REPLACE(REPLACE(text, \"
@@ -59,7 +59,7 @@ done
 
 ```
 
- select 구문에 **date**를 추가하면 db에 등록된 메시지 시간을 출력을 할 수 있다.
+select 구문에 **date**를 추가하면 db에 등록된 메시지 시간을 출력을 할 수 있다.
 
 이때 시간은 **LASTMESSAGEDATA**에 메시지는 **MESSAGE**에 저장을 해주도록 하자.
 
@@ -127,26 +127,25 @@ done
 
 
 
-## 포워딩 커멘드실행
+## 포워딩 커멘드 실행
 
-작성한 코드를 send-message.sh로 등록하고 터미널에서 실행하면 새 메시지가 포워딩 되는 것을 확인 할 수 있다.
+작성한 코드를 send-message.sh로 등록하고 터미널에서 실행하면 새 메시지가 포워딩되는 것을 확인할 수 있다.
 
 ```shell
 ./send-message.sh
 ```
 
-<!--
 
 ## Git source code
 
-[aadfadf]();
+[iphone-message-forward](https://github.com/dogfootdev/iphone-message-forward);
 
--->
+
 
 ## 주의사항
 
 - 새 메시지가 일시에 대량 발송되는 것을 방지하기 위해 sleep 시간은 1초로 지정하였다.
-- lastdate.txt에 0으로 지정하면 모든 카드내역이 전송되는 일이 발생하게 된며, sleep으로 처리하기 때문에 PC를 재시작하여도 멈추지 않고 모든 메시지가 전송되는 카오스를 경험하게 될 것이다.
+- lastdate.txt에 0으로 지정하면 모든 카드내역이 전송되는 일이 발생하게 되며, sleep으로 처리하기 때문에 PC를 재시작하여도 멈추지 않고 모든 메시지가 전송되는 카오스를 경험하게 될 것이다.
 
 
 

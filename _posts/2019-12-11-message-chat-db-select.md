@@ -7,19 +7,19 @@ categories: sqlite macOS-10.15.1 automation
 comments: true
 ---
 
-신용카드 사용내역을 포워딩 해야하는데, 아이폰 또는 맥에서 자원하는 서비스가 없어 메시지 포워딩 해주는 커멘드를 만들게 되었다.  
-이번 포스팅은 메시지 포워딩을 하기위한 사전 작업으로 메시지 앱의 chat.db를 sqlite로 신용카드 사용 내역만 추출하는 쿼리에 대해 다뤄보겠다.
+<!--신용카드 사용내역을 포워딩해야 하는데, 아이폰 또는 맥에서 자원하는 서비스가 없어 메시지 포워딩해주는 커멘드를 만들게 되었다.-->
+이번 포스팅은 메시지 포워딩을 하기 위한 사전 작업으로 메시지 앱의 chat.db를 sqlite로 신용카드 사용 내역만 추출하는 쿼리에 대해 다뤄보겠다.
 
 **사전 지식**  
 [sqlite](http://www.tutorialspoint.com/sqlite/)
 
 
-아래 [brew](https://brew.sh/index_ko) 명령어를 터미널에서 실행 시키면 sqlite가 설치된다.
+아래 [brew](https://brew.sh/index_ko) 명령어를 터미널에서 실행시키면 sqlite가 설치된다.
 ```shell
 brew install sqlite
 ```
 
-sqlite 설치가 완료됐다면 아래 위치에 있는 메시지앱의 db를 확인해 보자.
+sqlite 설치가 완료됐다면 아래 위치에 있는 메시지 앱의 db를 확인해 보자.
 ```shell
  ~/Library/Messages/chat.db
 ```
@@ -108,7 +108,7 @@ sqlite3 ~/Library/Messages/chat.db "SELECT date FROM message"
 
 ```
 
-위 ***date*** 값에서 3번째 값을 아래와 같이 ***where***에 적용하면 2개의 메시지가 출력이 되는 것을 확인 할 수 있다.
+위 ***date*** 값에서 3번째 값을 아래와 같이 ***where***에 적용하면 2개의 메시지가 출력이 되는 것을 확인할 수 있다.
 
 ```shell
 sqlite3 ~/Library/Messages/chat.db "SELECT text FROM message m INNER JOIN handle h ON h.ROWID=m.handle_id WHERE h.id=\"+82********\" AND m.date>568184557140316480" | while read prkey; do
@@ -116,4 +116,4 @@ sqlite3 ~/Library/Messages/chat.db "SELECT text FROM message m INNER JOIN handle
 done
 ```
 
-다음은 [맥에서 커멘드라인으로 아이폰에 메시지 포워딩 하기]({% post_url 2019-12-02-applescript-send-message%})에 대해 포스팅하도록 하겠다.<br><br>
+다음은 [커멘드 라인으로 아이폰 메시지 포워딩 하기]({% post_url 2019-12-26-message-forward%})에 대해 포스팅하도록 하겠다. <br><br>
