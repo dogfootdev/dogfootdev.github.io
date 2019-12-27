@@ -3,7 +3,7 @@ title: 맥에서 커멘드 라인으로 아이폰 메시지 보내기
 layout: post
 description: AppleScript를 이용해서 맥에서 메시지(SMS, MMS)를 전송해보자.
 date: '2019-12-02 17:50:00 +0000'
-categories: AppleScript macOS-10.15.1 iOS-13.2.3 automation
+categories: appleScript automation macOS-10.15.1 iOS-13.2.3
 comments: true
 ---
 

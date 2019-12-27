@@ -3,7 +3,7 @@ title: 맥용 메시지 앱에서 신용카드 사용내역 추출하기
 layout: post
 description: 아이폰과 연동된 맥에서 신용카드 사용내역 메시지를 가져와 보자
 date: '2019-12-10 22:00:00 +0000'
-categories: sqlite macOS-10.15.1 automation
+categories: sqlite automation macOS-10.15.1
 comments: true
 ---
 

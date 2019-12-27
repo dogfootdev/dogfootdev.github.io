@@ -3,7 +3,7 @@ title: 커멘드 라인으로 아이폰 메시지 포워딩 하기
 layout: post
 description: 새로 받은 신용카드 사용내역 메시지를 맥에서 커멘드 라인으로 아이폰으로 포워딩하기
 date: '2019-12-16 22:00:00 +0000'
-categories: sqlite macOS-10.15.1 automation
+categories: shell appleScript sqlite automation macOS-10.15.1 iOS-13.2.3
 comments: true
 
 ---
@@ -38,8 +38,6 @@ sqlite3 ~/Library/Messages/chat.db "SELECT REPLACE(REPLACE(text,SELECT REPLACE(R
 	echo "------------------------"
 	echo "$prkey"
 done
-
-
 ```
 
 
@@ -56,7 +54,6 @@ do
 	echo "------------------------"
 	echo "$prkey"
 done
-
 ```
 
 select 구문에 **date**를 추가하면 db에 등록된 메시지 시간을 출력을 할 수 있다.
@@ -73,7 +70,6 @@ do
 	echo ${LASTMESSAGEDATA}
 	echo ${MESSAGE}
 done
-
 ```
 
 select 후 마지막 메시지 시간을 **lastdate.txt**에 업데이트하면 새 메시지만 출력할 수 있는 기본 구조가 된다.
@@ -90,7 +86,6 @@ do
 	echo ${LASTMESSAGEDATA}
 	echo ${MESSAGE}
 done
-
 ```
 
 
@@ -138,7 +133,7 @@ done
 
 ## Git source code
 
-[iphone-message-forward](https://github.com/dogfootdev/iphone-message-forward);
+[iphone-message-forward](https://github.com/dogfootdev/iphone-message-forward)
 
 
 
