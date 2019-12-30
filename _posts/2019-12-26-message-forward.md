@@ -133,7 +133,7 @@ done
 
 ## Git source code
 
-[iphone-message-forward](https://github.com/dogfootdev/iphone-message-forward)
+[iphone-message-forward](https://github.com/dogfootdev/iphone-sms-forward)
 
 
 
