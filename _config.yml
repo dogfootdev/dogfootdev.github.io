@@ -41,4 +41,5 @@ g-analytics: UA-37374211-12
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
 #  - jekyll-feed
