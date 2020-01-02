@@ -20,7 +20,7 @@ comments: true
 
 
 
-##특수문자 REPLACE 처리
+## 특수문자 REPLACE 처리
 
 새 메시지 추출하기 앞서 카드사 메시지에는 보통 개행과 `*` 애스터리스크 문자가 포함돼 있어 text에 아래와 같이 REPLACE 처리가 필요하다.
 
@@ -42,7 +42,7 @@ done
 
 
 
-##새 메시지만 출력 하기
+## 새 메시지만 출력 하기
 
 메시지가 정상 출력되면 마지막으로 보낸 메시지 시간을 **lastdate.txt**파일에 저장하고 **LASTDATE** 변수로 가져오는 작업을 해주면 새로 받은(마지막으로 보낸 메시지 시간 이후) 메시지만 출력이 된다.
 
@@ -88,9 +88,33 @@ do
 done
 ```
 
+추가적으로 `lastdate.txt`에 데이터가 없을 경우 마지막 메시지 `date`를 업데이트 해주는 조건문을 추가해 주도록 하자.
+
+```shell
+LASTDATE=$(<lastdate.txt)
+LASTMESSAGEDATA=${LASTDATE}
+if [ -z "$LASTMESSAGEDATA" ]
+then
+	echo "not has last message date"
+	sqlite3 ~/Library/Messages/chat.db "SELECT date FROM message m INNER JOIN handle h ON h.ROWID=m.handle_id WHERE h.id=\""${FROMPHONENUMBER}"\" ORDER BY date DESC LIMIT 1" | while read prkey; 
+	do
+		echo ${prkey} > lastdate.txt
+	done
+else
+	sqlite3 ~/Library/Messages/chat.db "SELECT REPLACE(REPLACE(text, \"
+\", \"\"), \"*\", \"\*\"), date FROM message m INNER JOIN handle h ON h.ROWID=m.handle_id WHERE h.id=\""${FROMPHONENUMBER}"\" AND m.date>"${LASTDATE} | while read prkey; 
+	do
+		LASTMESSAGEDATA=$(echo ${prkey} | awk -F'|' '{print $2}');
+		echo ${LASTMESSAGEDATA} > lastdate.txt	
+		MESSAGE=$(echo ${prkey} | awk -F'|' '{print $1}');
+		echo ${LASTMESSAGEDATA}
+		echo ${MESSAGE}
+	done
+fi
+```
 
 
-##새 메시지만 전달하기
+## 새 메시지만 전달하기
 
 새 메시지 전달은 간단하다.
 
@@ -101,23 +125,32 @@ FROMPHONENUMBER="+8215771234"
 TOPHONENUMBER="+821012341234"
 LASTDATE=$(<lastdate.txt)
 LASTMESSAGEDATA=${LASTDATE}
-sqlite3 ~/Library/Messages/chat.db "SELECT REPLACE(REPLACE(text, \"
+if [ -z "$LASTMESSAGEDATA" ]
+then
+	echo "not has last message date"
+	sqlite3 ~/Library/Messages/chat.db "SELECT date FROM message m INNER JOIN handle h ON h.ROWID=m.handle_id WHERE h.id=\""${FROMPHONENUMBER}"\" ORDER BY date DESC LIMIT 1" | while read prkey; 
+	do
+		echo ${prkey} > lastdate.txt
+	done
+else
+	sqlite3 ~/Library/Messages/chat.db "SELECT REPLACE(REPLACE(text, \"
 \", \"\"), \"*\", \"\*\"), date FROM message m INNER JOIN handle h ON h.ROWID=m.handle_id WHERE h.id=\""${FROMPHONENUMBER}"\" AND m.date>"${LASTDATE} | while read prkey; 
-do
-	LASTMESSAGEDATA=$(echo ${prkey} | awk -F'|' '{print $2}');
-	echo ${LASTMESSAGEDATA} > lastdate.txt	
-	MESSAGE=$(echo ${prkey} | awk -F'|' '{print $1}');
-	echo ${LASTMESSAGEDATA}
-	echo ${MESSAGE}
-	osascript -e "tell application \"Messages\"
-	    set targetBuddy to \"${TOPHONENUMBER}\"
-	    set targetService to id of 1st service whose service type = iMessage
-	    set textMessage to \"${MESSAGE}\"
-	    set theBuddy to buddy targetBuddy of service id targetService
-	    send textMessage to theBuddy
-	end tell"
-	sleep 1
-done
+	do
+		LASTMESSAGEDATA=$(echo ${prkey} | awk -F'|' '{print $2}');
+		echo ${LASTMESSAGEDATA} > lastdate.txt	
+		MESSAGE=$(echo ${prkey} | awk -F'|' '{print $1}');
+		echo ${LASTMESSAGEDATA}
+		echo ${MESSAGE}
+		osascript -e "tell application \"Messages\"
+		    set targetBuddy to \"${TOPHONENUMBER}\"
+		    set targetService to id of 1st service whose service type = iMessage
+		    set textMessage to \"${MESSAGE}\"
+		    set theBuddy to buddy targetBuddy of service id targetService
+		    send textMessage to theBuddy
+		end tell"
+		sleep 1
+	done
+fi
 ```
 
 
