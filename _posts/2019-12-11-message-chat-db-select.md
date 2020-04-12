@@ -24,6 +24,11 @@ sqlite 설치가 완료됐다면 아래 위치에 있는 메시지 앱의 db를 
  ~/Library/Messages/chat.db
 ```
 
+Library 폴더가 안보인다면 user 폴더에서 단축키 ***shift + cmd + .***를 실행하면 숨김 폴더가 보이게 된다.
+```shell
+ ~/Library
+```
+
 
 sqlite로 테이블 목록을 출력해 보면 아래와 같은 에러가 발생한다.
 
@@ -38,7 +43,7 @@ chat.db에 접근할 수 있는 권한이 없어서 발생하는 에러이며, c
 chmod 777 ~/Library/Messages/chat.db
 ```
 
-다시 sqlite로 테실행하면 아래와 같이 테이블 목록이 출력된다.
+다시 sqlite로 실행하면 아래와 같이 테이블 목록이 출력된다.
 ```shell
 sqlite3 ~/Library/Messages/chat.db ".table";
 
